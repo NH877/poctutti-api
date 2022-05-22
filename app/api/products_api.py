@@ -22,10 +22,11 @@ def get(id):
 def add():
     name = request.json['name']
     amount = request.json['amount']
+    price = request.json['price']
     image = request.json['image']
     active = request.json['active']
 
-    product = Product(name, amount, image, active)
+    product = Product(name, amount, price, image, active)
     db.session.add(product)
     db.session.commit()
     return product_schema.jsonify(product)
@@ -37,11 +38,13 @@ def update(id):
 
     name = request.json['name']
     amount = request.json['amount']
+    price = request.json['price']
     image = request.json['image']
     active = request.json['active']
 
     product.name = name
     product.amount = amount
+    product.price = price
     product.image = image
     product.active = active
 
