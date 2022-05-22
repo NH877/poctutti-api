@@ -1,7 +1,7 @@
-from flask import Flask, jsonify
+from flask import Flask
 from db.database import db, ma
 from config import BaseConfig
-from models.product import Product, products_schema
+
 
 # Init application
 app = Flask(__name__)
@@ -12,10 +12,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = BaseConfig.DATABASE_TRACK_MODIFIC
 db.init_app(app)
 ma.init_app(app)
 
-@app.route('/')
-def index():
-    product_list = Product.query.all()
-    result = products_schema.dump(product_list)
-    return jsonify(result)
+# Init endpoints
+import api.products_api
 
 app.run()
