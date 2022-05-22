@@ -4,3 +4,4 @@ Flask-SQLAlchemy==2.5.1
 marshmallow==3.15.0
 requests==2.25.1
 SQLAlchemy==1.4.31
+gunicorn
