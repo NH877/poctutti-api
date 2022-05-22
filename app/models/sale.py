@@ -4,13 +4,11 @@ from datetime import datetime
 
 class Sale(db.Model):
     sale_id = db.Column(db.Integer, primary_key=True)
-    quantity = db.Column(db.Integer)
     store_id = db.Column(db.Integer, db.ForeignKey('store.store_id'))
     time = db.Column(db.DateTime, default=datetime.now)
     store = db.relationship('Store', backref='sales')
 
-    def __init__(self, quantity, store_id):
-        self.quantity = quantity
+    def __init__(self, store_id):
         self.store_id = store_id
 
 class SaleSchema(ma.SQLAlchemyAutoSchema):

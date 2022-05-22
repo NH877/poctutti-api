@@ -36,7 +36,6 @@ CREATE TABLE "store" (
 
 CREATE TABLE "sale" (
     "sale_id" SERIAL PRIMARY KEY,
-    "quantity" INT NOT NULL,
     "store_id" INT REFERENCES "store" ("store_id"),
     "time" TIMESTAMP NOT NULL
 );
@@ -44,5 +43,6 @@ CREATE TABLE "sale" (
 CREATE TABLE "product_sale" (
     "product_sale_id" SERIAL PRIMARY KEY,
     "sale_id" INT NOT NULL REFERENCES "sale" ("sale_id"),
-    "product_id" INT NOT NULL REFERENCES "product" ("product_id")
+    "product_id" INT NOT NULL REFERENCES "product" ("product_id"),
+    "quantity" INT NOT NULL
 );

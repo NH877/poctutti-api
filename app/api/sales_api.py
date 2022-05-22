@@ -21,10 +21,9 @@ def get_sale(id):
 # Add
 @app.route(ROUTE, methods=['POST'])
 def add_sale():
-    quantity = request.json['quantity']
     store_id = request.json['store_id']
 
-    sale = Sale(quantity, store_id)
+    sale = Sale(store_id)
     db.session.add(sale)
     db.session.commit()
     return sale_schema.jsonify(sale)
@@ -34,11 +33,9 @@ def add_sale():
 def update_sale(id):
     sale = Sale.query.get(id)
 
-    quantity = request.json['quantity']
     store_id = request.json['store_id']
 
-    sale.name = quantity
-    sale.amount = store_id
+    sale.store_id = store_id
 
     db.session.commit()
     return sale_schema.jsonify(sale)
