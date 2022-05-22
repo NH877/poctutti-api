@@ -14,5 +14,7 @@ ma.init_app(app)
 
 # Init endpoints
 import api.products_api
+import api.stores_api
+import api.sales_api
 
 app.run()

@@ -28,3 +28,21 @@ true),
 10.5,
 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg3QJOsl8GSGN3K6LkvfWnmnnABEJ_5YVFJcDDTXybYfEiupmiPX57OTaJ1f5bokHg2Gg&usqp=CAU',
 false);
+
+CREATE TABLE "store" (
+    "store_id" SERIAL PRIMARY KEY,
+    "name" VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE "sale" (
+    "sale_id" SERIAL PRIMARY KEY,
+    "quantity" INT NOT NULL,
+    "store_id" INT REFERENCES "store" ("store_id"),
+    "time" TIMESTAMP NOT NULL
+);
+
+CREATE TABLE "product_sale" (
+    "product_sale_id" SERIAL PRIMARY KEY,
+    "sale_id" INT NOT NULL REFERENCES "sale" ("sale_id"),
+    "product_id" INT NOT NULL REFERENCES "product" ("product_id")
+);

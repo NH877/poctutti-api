@@ -15,9 +15,9 @@ class Product(db.Model):
         self.image = image
         self.active = active
 
-class ProductSchema(ma.Schema):
+class ProductSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
-        fields = ('product_id', 'name', 'amount', 'price', 'image', 'active')
+        model = Product
 
 # Init schemas
 product_schema = ProductSchema()

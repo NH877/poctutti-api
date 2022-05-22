@@ -7,19 +7,19 @@ ROUTE_ID = '/product/<id>'
 
 # Get All
 @app.route(ROUTE, methods=['GET'])
-def get_all():
+def get_all_products():
     product_list = Product.query.all()
     return products_schema.jsonify(product_list)
 
 # Get
 @app.route(ROUTE_ID, methods=['GET'])
-def get(id):
+def get_product(id):
     product = Product.query.get(id)
     return product_schema.jsonify(product)
 
 # Add
 @app.route(ROUTE, methods=['POST'])
-def add():
+def add_product():
     name = request.json['name']
     amount = request.json['amount']
     price = request.json['price']
@@ -33,7 +33,7 @@ def add():
 
 # Update
 @app.route(ROUTE_ID, methods=['PUT'])
-def update(id):
+def update_product(id):
     product = Product.query.get(id)
 
     name = request.json['name']
@@ -53,7 +53,7 @@ def update(id):
 
 # Delete
 @app.route(ROUTE_ID, methods=['DELETE'])
-def delete(id):
+def delete_product(id):
     product = Product.query.get(id)
     db.session.delete(product)
     db.session.commit()
