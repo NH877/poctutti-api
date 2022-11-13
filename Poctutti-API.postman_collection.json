@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "c1219e99-3f01-40f4-ab29-8e0fcfeb4f7c",
+		"name": "Poctutti API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"active\": true,\n    \"amount\": 120,\n    \"image\": \"https://redsport.vteximg.com.br/arquivos/ids/1099467-1000-1000/GORRA-NIKE-LEGACY-91-TECH-CAP-UNISEX.jpg?v=637763978083570000\",\n    \"name\": \"Gorra\",\n    \"price\": 125.85\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://poctutti-api.herokuapp.com/product",
+					"protocol": "https",
+					"host": [
+						"poctutti-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAll Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://poctutti-api.herokuapp.com/product",
+					"protocol": "https",
+					"host": [
+						"poctutti-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://poctutti-api.herokuapp.com/product/5",
+					"protocol": "https",
+					"host": [
+						"poctutti-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"product",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://poctutti-api.herokuapp.com/product/2",
+					"protocol": "https",
+					"host": [
+						"poctutti-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"product",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"active\": true,\n    \"amount\": 22,\n    \"image\": \"https://http2.mlstatic.com/D_NQ_NP_851004-MCO48201125477_112021-W.jpg\",\n    \"name\": \"Camisa\",\n    \"price\": 40.5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://poctutti-api.herokuapp.com/product/2",
+					"protocol": "https",
+					"host": [
+						"poctutti-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"product",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
