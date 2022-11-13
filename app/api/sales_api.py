@@ -1,4 +1,4 @@
-from __main__ import app, request
+from app import app, request
 from viewmodels.product_vm import ProductVM
 from viewmodels.store_vm import StoreVM
 from viewmodels.sale_vm import SaleVM

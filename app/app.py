@@ -2,7 +2,6 @@ from flask import Flask, request
 from db.database import db, ma
 from config import BaseConfig
 
-
 # Init application
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = BaseConfig.DATABASE_URI

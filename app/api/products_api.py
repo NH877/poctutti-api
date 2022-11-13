@@ -1,4 +1,4 @@
-from __main__ import app, request
+from app import app, request
 from db.database import db
 from models.product import Product, products_schema, product_schema
 

@@ -1,4 +1,4 @@
-from __main__ import app, request
+from app import app, request
 from db.database import db
 from models.store import Store, stores_schema, store_schema
 
