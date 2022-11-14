@@ -7,7 +7,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 
 # Init CORS
-CORS(app, origins=['*'])
+CORS(app, origins=['*'], methods=['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'])
 
 # Init database
 app.config['SQLALCHEMY_DATABASE_URI'] = BaseConfig.DATABASE_URI
