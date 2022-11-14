@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from db.database import db, ma
 from config import BaseConfig
 from flask_cors import CORS
